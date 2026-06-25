@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>n.SSignカムバサポート</title>
+  <meta name="description" content="n.SSignカムバ応援用TODOチェックリスト" />
+  <meta name="theme-color" content="#7c5cff" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="hero__label"><img src="assets/kamuba.png" alt="ロゴ" class="hero-label-icon">
+  <span>n.SSignカムバサポート</span></div>
+      <h1 id="pageTitle">投票アイテムを集めよう！</h1>
+      <p id="pageDescription">コツコツ応援毎日チェックリスト<br>
+      チェックは同日内だけ保存されます。日付が変わると自動リセットされます。</p>
+
+      <div class="date-card">
+        <span class="date-card__label">TODAY</span>
+        <strong id="todayText">----</strong>
+      </div>
+    </header>
+
+    <nav class="support-tabs" aria-label="応援レベル切り替え">
+      <a href="#daily" class="support-tab" data-page="daily">
+        <strong>コツコツ応援！</strong>
+        <span>きょうの<br>推しごと</span>
+        <em id="dailyMiniProgress">0%</em>
+      </a>
+
+      <a href="#boost" class="support-tab" data-page="boost">
+        <strong>そろそろ本腰！</strong>
+        <span>上乗せ<br>推しごと</span>
+        <em id="boostMiniProgress">0%</em>
+      </a>
+
+      <a href="#final" class="support-tab" data-page="final">
+        <strong>決戦せまる！</strong>
+        <span>限界突破<br>推しごと</span>
+        <em id="finalMiniProgress">0%</em>
+      </a>
+    </nav>
+
+    <div id="pageNotice" class="page-notice"></div>
+    <section class="progress-card" aria-label="今日の達成率">
+        <div class="progress-card__inner">
+          <div class="progress-card__top">
+            <div>
+              <p class="section-label">今日の達成率</p>
+              <h2 id="progressText">0%</h2>
+            </div>
+            <div id="countText" class="count-badge">0 / 0</div>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div id="progressFill" class="progress-bar__fill"></div>
+          </div>
+          <p id="completeText" class="complete-text" aria-live="polite"></p>
+        </div>
+      </section>
+
+    <main id="taskContainer" class="task-grid"></main>
+
+    <section class="install-card">
+      <div>
+        <p class="section-label">スマホホーム画面追加</p>
+        <h2>アプリみたいに使えます</h2>
+        <p>
+          iPhone：Safariの共有ボタン<br>→「ホーム画面に追加」<br>
+          Android：Chromeのメニュー<br>→「ホーム画面に追加」
+        </p>
+      </div>
+
+      <button id="installButton" class="install-button">
+        ホーム画面追加手順
+      </button>
+    </section>
+
+    <footer class="footer">
+      <p>
+        チェックは同日内だけ保存されます<br>日付が変わると自動リセットされます
+      </p>
+      <button id="manualResetButton" class="text-button" type="button">
+        このページのチェックを手動でリセット
+      </button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,585 @@
+:root {
+  --bg: #f5f3ff;
+  --card: rgba(255, 255, 255, 0.88);
+  --text: #251f3f;
+  --muted: #756f91;
+  --primary: #7c5cff;
+  --primary-dark: #5d42da;
+  --accent: #ff8ac7;
+  --line: rgba(124, 92, 255, 0.18);
+  --shadow: 0 18px 45px rgba(67, 45, 137, 0.14);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 138, 199, 0.36), transparent 32%),
+    radial-gradient(circle at top right, rgba(124, 92, 255, 0.30), transparent 34%),
+    linear-gradient(180deg, #fbfaff 0%, var(--bg) 100%);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 22px 16px 40px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 34px 22px 28px;
+  border-radius: var(--radius-xl);
+  color: white;
+  background:
+    linear-gradient(135deg, rgba(124, 92, 255, 0.96), rgba(255, 138, 199, 0.90)),
+    url("assets/bg-stars.svg");
+  background-size: cover;
+  box-shadow: var(--shadow);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  right: -70px;
+  top: -70px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.hero__label,
+.section-label {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  opacity: 0.86;
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: clamp(31px, 8vw, 54px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.hero h1.long-title {
+  white-space: nowrap;
+  font-size: clamp(22px, 7vw, 48px);
+}
+.hero p {
+  position: relative;
+  z-index: 1;
+  margin: 12px 0 0;
+  font-weight: 700;
+  opacity: 0.92;
+}
+
+.date-card {
+  position: relative;
+  z-index: 1;
+  margin-top: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+
+  gap: 3px;
+  padding: 13px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(8px);
+}
+
+.date-card__label {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  opacity: 0.8;
+}
+
+.date-card strong {
+  font-size: 23px;
+}
+
+.progress-card,
+.install-card,
+.app-card,
+.footer {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.progress-card {
+  margin-top: 18px;
+  padding: 22px;
+}
+
+.progress-card__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.progress-card h2,
+.install-card h2 {
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: -0.04em;
+}
+
+.count-badge {
+  flex: 0 0 auto;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: var(--primary-dark);
+  font-weight: 900;
+  background: rgba(124, 92, 255, 0.12);
+}
+
+.progress-bar {
+  height: 14px;
+  margin-top: 16px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(124, 92, 255, 0.12);
+}
+
+.progress-bar__fill {
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: width 0.28s ease;
+}
+
+.complete-text {
+  min-height: 1.5em;
+  margin: 12px 0 0;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--primary-dark);
+}
+
+.task-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.app-card {
+  overflow: hidden;
+}
+
+.app-card__header {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 18px 18px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.app-icon {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 9px 24px rgba(36, 27, 88, 0.13);
+}
+
+.app-card h3 {
+  margin: 0 0 3px;
+  font-size: 24px;
+  letter-spacing: -0.03em;
+}
+
+.app-card__desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.task-list {
+  display: grid;
+  gap: 0;
+  padding: 8px 10px 12px;
+}
+
+.task-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  min-height: 52px;
+  padding: 12px 10px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.task-item:hover {
+  background: rgba(124, 92, 255, 0.07);
+}
+
+.task-item:active {
+  transform: scale(0.99);
+}
+
+.task-item input[type="checkbox"] {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  margin-top: 2px;
+  accent-color: var(--primary);
+}
+
+.task-item span {
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.task-item input:checked + span {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.install-card {
+  margin-top: 18px;
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.install-card p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.install-button {
+  min-width: 170px;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 18px;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  font-weight: 900;
+  box-shadow: 0 12px 28px rgba(124, 92, 255, 0.26);
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 18px;
+  padding: 18px;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.text-button {
+  border: 0;
+  color: var(--primary-dark);
+  background: transparent;
+  font-weight: 900;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (min-width: 760px) {
+  .task-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    padding: 46px 42px 36px;
+  }
+
+  .progress-card,
+  .install-card {
+    padding: 26px;
+  }
+}
+
+@media (max-width: 560px) {
+  .app-shell {
+    padding: 12px 12px 28px;
+  }
+
+  .hero {
+    border-radius: 24px;
+  }
+
+  .progress-card__top,
+  .install-card {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .install-button {
+    width: 100%;
+  }
+
+  .app-card h3 {
+    font-size: 21px;
+  }
+}
+/* ===========================
+   Support Tabs - Page Like UI
+=========================== */
+:root {
+  --tab-page-bg: rgba(245, 218, 243, 0.96);
+  --tab-border: 2px solid var(--primary);
+}
+
+.support-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 40px 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.support-tab {
+  min-width: 0;
+  min-height: 132px;
+  padding: 12px 6px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.78);
+  border-right: 1px solid rgba(37, 31, 63, 0.25);
+  border-radius: 0;
+  box-shadow: none;
+  transition: all 0.2s ease;
+}
+
+.support-tab:first-child {
+  border-top-left-radius: 18px;
+}
+
+.support-tab:last-child {
+  border-right: 0;
+  border-top-right-radius: 18px;
+}
+
+.support-tab strong {
+  font-size: clamp(13px, 2.7vw, 20px);
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.support-tab span {
+  font-size: clamp(11px, 2.8vw, 22px);
+  line-height: 1.15;
+  text-align: center;
+  font-weight: 800;
+
+  white-space: normal;
+  word-break: keep-all;
+}
+
+.support-tab em {
+  min-width: 116px;
+  height: 30px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 900;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.support-tab.is-active {
+  position: relative;
+  z-index: 5;
+  min-height: 142px;
+  margin-top: -16px;
+  background: var(--tab-page-bg);
+  border-top: var(--tab-border);
+  border-left: var(--tab-border);
+  border-right: var(--tab-border);
+  border-bottom: 0;
+  box-shadow: 0 -8px 18px rgba(124, 92, 255, 0.16);
+}
+
+.support-tab.is-active strong {
+  color: var(--primary-dark);
+}
+
+.support-tab.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 4px;
+  background: var(--tab-page-bg);
+}
+
+.progress-card {
+  position: relative;
+  margin-top: -2px;
+  padding: 24px;
+
+  border-radius: 0;
+  border-top: var(--tab-border);
+  border-left: var(--tab-border);
+  border-right: var(--tab-border);
+  border-bottom: 0;
+
+  background: var(--tab-page-bg) !important;
+  box-shadow: none;
+}
+
+.progress-card__inner {
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 10px 28px rgba(67, 45, 137, 0.08);
+}
+
+.task-grid {
+  margin-top: 0;
+  padding: 18px;
+  border-left: var(--tab-border);
+  border-right: var(--tab-border);
+  border-bottom: var(--tab-border);
+  background: var(--tab-page-bg);
+}
+
+.app-card {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 28px rgba(67, 45, 137, 0.08);
+}
+
+@media (max-width: 560px) {
+  .support-tab {
+    min-height: 104px;
+    padding: 9px 3px 8px;
+  }
+
+  .support-tab.is-active {
+    min-height: 116px;
+    margin-top: -12px;
+  }
+
+  .support-tab strong {
+    font-size: 11px;
+    letter-spacing: -0.05em;
+  }
+
+  .support-tab span {
+    font-size: clamp(10px, 3vw, 13px);
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+  }
+
+  .support-tab em {
+    min-width: 70px;
+    height: 24px;
+    padding: 0 8px;
+    font-size: 11px;
+  }
+
+  .task-grid {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .support-tab {
+    min-height: 92px;
+    padding: 6px 2px;
+  }
+
+  .support-tab.is-active {
+    min-height: 102px;
+  }
+
+  .support-tab strong,
+  .support-tab span {
+    font-size: 10px;
+  }
+
+  .support-tab em {
+    min-width: 54px;
+    height: 21px;
+    font-size: 10px;
+  }
+}
+
+.hero__label,
+.section-label {
+  text-transform: none !important;
+}
+.hero__label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-label-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+.page-notice {
+  margin: 0;
+  padding: 14px 18px 10px;
+  background: var(--tab-page-bg);
+  border-left: var(--tab-border);
+  border-right: var(--tab-border);
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 900;
+  text-align: center;
+}
