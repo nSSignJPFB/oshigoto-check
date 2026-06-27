@@ -15,7 +15,6 @@ const pageConfigs = {
         tasks: [
           "出席後広告視聴❤️",
           "ルーレット❤️",
-          
         ]
       },
       {
