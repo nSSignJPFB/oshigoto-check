@@ -93,8 +93,8 @@ const pageConfigs = {
     completeMessage: "コンプリート🎉 限界突破推しごと完了！",
     apps: [
       {
-        name: "Fancast",
-        image: "assets/Fancast.svg",
+        name: "coogoong",
+        image: "assets/coogoong.svg",
         description: "💙30日(チェックイン・広告)",
         tasks: [
           "チェックイン💙",
