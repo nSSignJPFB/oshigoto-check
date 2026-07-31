@@ -94,7 +94,7 @@ const pageConfigs = {
     apps: [
       {
         name: "coogoong",
-        image: "assets/coogoong.svg",
+        image: "assets/coogoong.png",
         description: "💙30日(チェックイン・広告)",
         tasks: [
           "チェックイン💙",
