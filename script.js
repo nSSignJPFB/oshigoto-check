@@ -71,17 +71,6 @@ const pageConfigs = {
         tasks: [
           "広告視聴🟦 [20回]<br>※1回ごとに1分程度インターバル"
         ]
-      },
-      {
-        name: "Higher",
-        image: "assets/Higer.svg",
-        description: "🔴90日",
-        tasks: [
-          "出席+広告視聴ボーナス🔴",
-          "ルーレット🔴 [3回]",
-          "はしご乗り🔴 [3回]",
-          "広告視聴🔴 [50回]<br>※10回ごとに5分インターバル"
-        ]
       }
     ]
   },
@@ -109,7 +98,17 @@ const pageConfigs = {
         tasks: [
           "出席⬜"
         ]
-      }
+      },
+      {
+        name: "Higher",
+        image: "assets/Higer.svg",
+        description: "🔴90日",
+        tasks: [
+          "出席 [🔴期限15日]",
+          "ルビーガチャ [🔴期限30日]×20回<br>カードを引いて広告視聴<br>※インターバル10分/回",
+          "広告視聴 [🔴期限30日]×50回<br>※インターバル10分/回"
+        ]
+      }  
     ]
   }
 };
