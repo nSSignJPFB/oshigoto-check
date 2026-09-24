@@ -23,7 +23,7 @@ const pageConfigs = {
         image: "assets/Linc.svg",
         description: "💜180日",
         tasks: [
-          "広告視聴💜 [30回]<br>※1回ごとにインターバルあり",
+          "ファンポイントルーレット💜 [12回]<br>※1回ごとに10分インターバル",
         ]
       },
       {
@@ -42,7 +42,7 @@ const pageConfigs = {
           "出席🟣",
           "招待イベントをチェック🟣",
           "BIGCのSNSを訪問🟣",
-          "広告視聴🟣[100回]<br>※1回ごとに短いインターバル",
+          "広告視聴🟣[30回]<br>※1回ごとに短いインターバル",
           "K-POPゲーム🟣",
         ]
       }
@@ -69,7 +69,7 @@ const pageConfigs = {
         image: "assets/muniverse.svg",
         description: " ⬜30日 ／ 🟦60日",
         tasks: [
-          "広告視聴🟦 [20回]<br>※1回ごとに1分程度インターバル"
+          "広告視聴🟦 [20回]<br>※1回ごとに短いインターバル"
         ]
       }
     ]
@@ -102,7 +102,7 @@ const pageConfigs = {
       {
         name: "Higher",
         image: "assets/Higer.svg",
-        description: "🔴30日",
+        description: "🔴15・30日",
         tasks: [
           "出席🔴 [期限15日]",
           "ルビーガチャ🔴 [期限30日]×20回<br>※カードを引いて広告視聴<br>※インターバル10分/回",
